@@ -12,7 +12,7 @@ func main() {
 	for _, filename := range os.Args[1:] {
 		data, err := os.ReadFile(filename)
 		if err != nil {
-			fmt.Printf(os.Stderr.Name(), "dup3: %v\n", err)
+			fmt.Fprintf(os.Stderr, "dup3: %v\n", err)
 			continue
 		}
 		for _, line := range strings.Split(string(data), "\n") {
